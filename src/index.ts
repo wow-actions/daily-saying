@@ -16,8 +16,10 @@ type Saying = {
 }
 
 async function getPicturePixel(url: string) {
-  const buffer = await fetch(url).then((res) => res.arrayBuffer())
-  const size = imageSize(buffer as Buffer)
+  const blob = await fetch(url).then((res) => res.blob())
+  const arrayBuffer = await blob.arrayBuffer()
+  const buffer = Buffer.from(arrayBuffer)
+  const size = imageSize(buffer)
   if (size.width && size.height) {
     return size.width * size.height
   }
@@ -32,10 +34,19 @@ async function run() {
   try {
     const resp = await fetch('http://open.iciba.com/dsapi/')
     const data = (await resp.json()) as Saying
+
+    let annotation = data.translation
+    if (annotation === '新版每日一句') {
+      annotation = ''
+    }
+    if (annotation.startsWith('小编的话')) {
+      annotation = annotation.substring(5)
+    }
+
     core.setOutput('tts', data.tts)
     core.setOutput('content', data.content)
     core.setOutput('translation', data.note)
-    core.setOutput('annotation', data.translation)
+    core.setOutput('annotation', annotation)
     core.setOutput('picture', data.picture)
     core.setOutput('picture2', data.picture2)
     core.setOutput('picture3', data.picture3)
