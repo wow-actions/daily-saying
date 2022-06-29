@@ -16,8 +16,7 @@ type Saying = {
 }
 
 async function getPicturePixel(url: string) {
-  const blob = await fetch(url).then((res) => res.blob())
-  const arrayBuffer = await blob.arrayBuffer()
+  const arrayBuffer = await fetch(url).then((res) => res.arrayBuffer())
   const buffer = Buffer.from(arrayBuffer)
   const size = imageSize(buffer)
   if (size.width && size.height) {
