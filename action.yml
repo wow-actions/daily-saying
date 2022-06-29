@@ -2,8 +2,8 @@ name: Daily Saying
 description: Fetch a daily saying from iciba.com and output it
 author: bubkoo <bubkoo.wy@gmail.com>
 branding:
-  icon: at-sign
-  color: yellow
+  icon: send
+  color: green
 inputs:
   extract_best_picture:
     description: Extract the best picture from response
