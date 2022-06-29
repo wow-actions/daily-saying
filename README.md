@@ -18,7 +18,7 @@
 Create a `.github/workflows/daily-saying.yml` file in the repository you want to install this action, then add the following to it:
 
 ```yml
-name: Export Version
+name: Daily Saying
 on:
   push:
     branches:
