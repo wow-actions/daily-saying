@@ -30,6 +30,8 @@ jobs:
       - uses: wow-actions/daily-saying@v1
 ```
 
+[screenshot](./screenshot.jpg)
+
 ## Inputs
 
 Various inputs are defined to let you configure the action:
