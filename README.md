@@ -30,7 +30,7 @@ jobs:
       - uses: wow-actions/daily-saying@v1
 ```
 
-[screenshot](./screenshot.jpg)
+![screenshot](./screenshot.jpg)
 
 ## Inputs
 
