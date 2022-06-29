@@ -1,0 +1,15 @@
+name: Daily Saying
+on:
+  push:
+    branches:
+      - master
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install
+        run: yarn
+      - name: Build
+        run: yarn build
+      - uses: ./

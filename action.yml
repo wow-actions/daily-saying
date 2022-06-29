@@ -1,0 +1,38 @@
+name: Daily Saying
+description: Fetch a daily saying from iciba.com and output it
+author: bubkoo <bubkoo.wy@gmail.com>
+branding:
+  icon: at-sign
+  color: yellow
+inputs:
+  extract_best_picture:
+    description: Extract the best picture from response
+    required: false
+
+outputs:
+  content:
+    description: The content of the saying
+  translation:
+    description: The Chinese translation of the saying
+  annotation:
+    description: The Chinese annotation of the saying
+  tts:
+    description: The tts of the saying
+  picture:
+    description: The picture of the saying
+  picture2:
+    description: The picture2 of the saying
+  picture3:
+    description: The picture3 of the saying
+  picture4:
+    description: The picture4 of the saying
+  share_picture:
+    description: The picture for sharing
+  best_picture:
+    description: The best picture picked from picture/picture2picture3/picture4
+  date:
+    description: The date of the saying
+
+runs:
+  using: node12
+  main: dist/index.js
