@@ -1,6 +1,6 @@
 {
   "name": "daily-saying",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Fetch a daily saying from iciba.com and output it",
   "main": "dist/index.js",
   "files": [
@@ -43,11 +43,8 @@
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
-    "@types/html-minifier": "^4.0.0",
-    "@types/mustache": "^4.0.1",
     "@types/node": "^18.0.0",
     "@types/node-fetch": "^2.5.7",
-    "@types/sharp": "^0.30.4",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
     "@vercel/ncc": "^0.34.0",
