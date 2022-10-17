@@ -34,5 +34,5 @@ outputs:
     description: The date of the saying
 
 runs:
-  using: node12
+  using: node16
   main: dist/index.js
