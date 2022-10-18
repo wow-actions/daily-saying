@@ -59,7 +59,7 @@ async function run() {
         data.picture2,
         data.picture3,
         data.picture4,
-        data.fenxiang_img,
+        // data.fenxiang_img,
       ].filter((url) => !!url)
       const pixelSize = await Promise.all(
         pics.map((url) => getPicturePixel(url)),

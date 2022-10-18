@@ -1,6 +1,6 @@
 {
   "name": "daily-saying",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Fetch a daily saying from iciba.com and output it",
   "main": "dist/index.js",
   "files": [
