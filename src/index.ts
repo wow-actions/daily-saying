@@ -29,6 +29,10 @@ async function getPicturePixel(url: string) {
   return size.height || 0
 }
 
+function padDateNumber(m: number) {
+  return m > 9 ? `${m}` : `0${m}`
+}
+
 async function run() {
   try {
     const resp = await fetch('http://open.iciba.com/dsapi/')
@@ -51,7 +55,13 @@ async function run() {
     core.setOutput('picture3', data.picture3)
     core.setOutput('picture4', data.picture4)
     core.setOutput('share_picture', data.fenxiang_img)
-    core.setOutput('date', data.dateline)
+
+    const now = new Date()
+    const yyyy = now.getFullYear()
+    const mm = padDateNumber(now.getMonth() + 1)
+    const dd = padDateNumber(now.getDate())
+
+    core.setOutput('date', `${yyyy}-${mm}-${dd}`)
 
     if (core.getInput('extract_best_picture') !== 'false') {
       const pics = [
